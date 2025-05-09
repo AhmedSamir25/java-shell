@@ -7,7 +7,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        String[] shellType = { "echo", "exit", "type" };
+        String[] shellType = { "echo", "exit", "type", "pwd" };
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("$ ");
@@ -45,6 +45,10 @@ public class Main {
 
             if (command.equals("echo")) {
                 System.out.println(String.join(" ", arguments));
+                continue;
+            }
+            if (command.equals("pwd")) {
+                System.out.println(System.getProperty("user.dir"));
                 continue;
             }
 
